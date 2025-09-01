@@ -12,11 +12,12 @@ async def get_items() -> List[Dict]:
     return items
 
 
-async def create_item(item: ItemCreate) -> Dict:
-    item_dict = item.model_dump()
-    result = await mongodb.db.items.insert_one(item_dict)
-    item_dict["_id"] = result.inserted_id
-    return item_dict
+async def create_items(items: List[ItemCreate]) -> List[Dict]:    
+    item_dicts = [item.model_dump() for item in items]
+    result = await mongodb.db.items.insert_many(item_dicts)
+    for i, item_dict in enumerate(item_dicts):
+        item_dict["_id"] = result.inserted_ids[i]
+    return item_dicts
 
 
 async def get_item(item_id: str) -> Dict | None:

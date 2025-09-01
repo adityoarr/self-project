@@ -16,9 +16,9 @@ async def read_items():
     return await crud.get_items()
 
 
-@router.post("/", response_model=Item, status_code=status.HTTP_201_CREATED)
-async def create_new_item(item: ItemCreate):
-    return await crud.create_item(item)
+@router.post("/", response_model=List[Item], status_code=status.HTTP_201_CREATED)
+async def create_new_item(item: List[ItemCreate]):
+    return await crud.create_items(item)
 
 
 @router.get("/{item_id}", response_model=Item)
