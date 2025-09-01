@@ -1,0 +1,21 @@
+ADMIN:
+- tab menu berisi list menu
+- tiap item ada tombol edit dan show/hide untuk tampil di halaman depan
+- tab menu ada floating button untuk tambah menu
+- item menu berisi gambar, nama, deskripsi, harga, jenis (makanan, minuman, camilan)
+- tab pengaturan hanya tombol logout
+- tab history pesanan (coming soon)
+*Admin login tidak ada aktifitas setelah 5 menit otomatis logout
+
+USER:
+- header fix nama warung/catering + icon info (diklik muncul modal informasi->aplikasi pesan jumlah besar, dll)
+- halaman depan langsung tampilan menu
+- tampilan menu ada 3 tab (makanan, minuman, camilan)
+- tiap item di klik muncul modal berisi gambar, nama, deskripsi
+- tiap item ada +- jumlah pesan
+- tombol pesan fix bottom
+- tombol pesan di klik ada preview yang dipesan dan form nama pemesan dan lokasi antar 
+(lokasi bisa pickup, diantar->dalam 1km gratis, setelah itu ?kmx1000)
+- setelah preview, isi form nama dan lokasi, teks pesanan di-format teks WA dan tombol pesan final 
+dilempar ke whatsapp dengan sudah diformat
+- di whatsapp, tambahkan backlink ke web menu agar disimpan langsung di chat
