@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const productRoutes = require('../routes/readRoutes');
+const readRoutes = require('../routes/readRoutes');
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI)
     .catch(err => console.error('MongoDB connection error:', err));
 
 // API Routes
-app.use('/api/items', productRoutes);
+app.use('/api/items', readRoutes);
 
 // Vercel serverless function entry point
 module.exports = app;
